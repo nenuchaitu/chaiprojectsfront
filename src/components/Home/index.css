@@ -1,0 +1,40 @@
+.home-body-container {
+  background-color: #ffffff;
+  padding: 10px 0px 10px 0px;
+  justify-content: center;
+  min-height: 90vh;
+  align-items: center;
+}
+@media screen and (min-width: 577px) {
+  .home-body-container {
+    padding: 15px 80px 15px 80px;
+  }
+}
+@media screen and (min-width: 962px) {
+  .home-body-container {
+    padding: 15px 140px 15px 140px;
+  }
+}
+.user-data-loader {
+  padding: 10px 30px 10px 30px;
+}
+@media screen and (min-width: 576px) {
+  .user-data-loader {
+    padding: 10px 0px 10px 0px;
+  }
+}
+.loading-view-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+.user-files-list {
+  padding-left: 0px;
+  margin-left: 0px;
+  margin-top: 30px;
+  list-style-type: none;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}

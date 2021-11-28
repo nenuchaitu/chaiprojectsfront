@@ -1,0 +1,27 @@
+.file-uploader-container {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.upload-heading {
+  font-size: 26px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  color: #334a39;
+}
+.files {
+  margin-top: 50px;
+}
+.files-drop-zone {
+  border: 1px solid #7d6b45;
+  padding: 20px;
+}
+.upload-button {
+  background-color: #424570;
+  color: white;
+  border-radius: 7px;
+  border: none;
+  padding: 10px;
+}
