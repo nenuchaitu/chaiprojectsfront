@@ -6,7 +6,7 @@ import Loader from 'react-loader-spinner'
 
 import Header from '../Header'
 import FailureView from '../FailureView'
-import UserFilesListItem from '../UserFilesListItem'
+import ProjectItem from '../ProjectItem'
 
 import './index.css'
 
@@ -18,19 +18,16 @@ const apiStatusConstants = {
 }
 
 class Home extends Component {
-  state = {userFilesList: '', apiStatus: apiStatusConstants.initial}
+  state = {projectsList: '', apiStatus: apiStatusConstants.initial}
 
   componentDidMount() {
-    this.getUserData()
+    this.getProjectsData()
   }
 
-  getUserData = async () => {
+  getProjectsData = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
-    const userString = Cookies.get('user')
-    const userData = JSON.parse(userString)
-    const jwtToken = userData.jwt_token
-    const {userId} = userData
-    const url = `https://userdatanode.herokuapp.com/user/${userId}`
+    const jwtToken = Cookies.get('jwt_token')
+    const url = `https://chaiprojectsdatabase.herokuapp.com/projects`
     const options = {
       method: 'GET',
       headers: {
@@ -43,21 +40,21 @@ class Home extends Component {
       const data = await response.json()
       this.setState({
         apiStatus: apiStatusConstants.success,
-        userFilesList: data.userFiles,
+        projectsList: data.projects,
       })
     } else {
       this.setState({apiStatus: apiStatusConstants.failure})
     }
   }
 
-  renderUserFilesListView = () => {
-    const {userFilesList} = this.state
+  renderProjectsListView = () => {
+    const {projectsList} = this.state
     return (
       <>
-        <h1 className="user-files-heading">My Files</h1>
+        <h1 className="user-files-heading">My Projects</h1>
         <ul className="user-files-list">
-          {userFilesList.map(file => (
-            <UserFilesListItem data={file} key={file.id} />
+          {projectsList.map(file => (
+            <ProjectItem data={file} key={file.id} />
           ))}
         </ul>
       </>
@@ -74,9 +71,9 @@ class Home extends Component {
     const {apiStatus} = this.state
     switch (apiStatus) {
       case apiStatusConstants.success:
-        return this.renderUserFilesListView()
+        return this.renderProjectsListView()
       case apiStatusConstants.failure:
-        return <FailureView getUserData={this.getUserData} />
+        return <FailureView getProjectsData={this.getProjectsData} />
       case apiStatusConstants.inProgress:
         return this.renderLoadingView()
       default:

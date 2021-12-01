@@ -1,21 +1,17 @@
 ### Brief description of appliaction
 
-1)The web site login asks for userId and password
+1)The web site login asks for username and password
 
-2)userId's ranges from 1 to 10.
+2)username is chaitanya
 
 3)password is jhondoe@123
 
-4)once you login corresponding user files are displayed on Home page
+4)once you login my projects are displayed on Home page
 
-5)Under Upload section you can upload files
+5)Under add projects section you can upload Projects
 
-6)You can drag or click on upload to upload files
-
-7)Even the files uploaded exits in data it shows submit success
+6)Once you save the project status of submission and add another project displayed at bottom of the page
 
 ### section to work on
 
-1)user register section
-
-2)single data upload section via title and body as input fields
+1)adding the technologies used into projects data base

@@ -6,7 +6,7 @@
   height: 100vh;
 
   margin: auto;
-  background-color: #000000;
+  background-color: #fff;
 }
 
 .login-website-logo-desktop-image {
@@ -21,7 +21,7 @@
   border-radius: 8px;
   width: 80%;
   max-width: 350px;
-  background-color: #272727;
+  background-color: #cfcbca;
 }
 
 @media screen and (min-width: 768px) {
@@ -45,15 +45,15 @@
   font-weight: bold;
   font-size: 12px;
   line-height: 16px;
-  color: #fff;
+  color: #000;
 }
 
-.userId-input-field {
+.username-input-field {
   font-size: 14px;
   height: 40px;
   border: 1px solid #d7dfe9;
-  background-color: #272727;
-  color: #64748b;
+  background-color: #f2eeed;
+  color: #000;
   border-radius: 2px;
   margin-top: 5px;
   padding: 8px 16px 8px 16px;
@@ -64,8 +64,8 @@
   font-size: 14px;
   height: 40px;
   border: 1px solid #d7dfe9;
-  background-color: #272727;
-  color: #64748b;
+  background-color: #f2eeed;
+  color: #000;
   border-radius: 2px;
   margin-top: 5px;
   padding: 8px 16px 8px 16px;

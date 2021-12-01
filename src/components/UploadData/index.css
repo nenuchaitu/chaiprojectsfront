@@ -1,6 +1,6 @@
 .file-uploader-container {
   min-height: 100vh;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -10,13 +10,7 @@
   font-family: 'Roboto';
   font-weight: 700;
   color: #334a39;
-}
-.files {
-  margin-top: 50px;
-}
-.files-drop-zone {
-  border: 1px solid #7d6b45;
-  padding: 20px;
+  margin-top: 40px;
 }
 .upload-button {
   background-color: #424570;
@@ -24,4 +18,123 @@
   border-radius: 7px;
   border: none;
   padding: 10px;
+}
+.input-form-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 550px;
+  background-color: #9c9c9c;
+  margin-bottom: 50px;
+}
+.input-container-project {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 350px;
+  margin: 15px;
+}
+@media screen and (max-width: 768px) {
+  .input-container-project {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+  }
+}
+.title-input {
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #d7dfe9;
+  background-color: #f2eeed;
+  color: #000;
+  border-radius: 3px;
+  margin-top: 5px;
+  padding: 8px 16px 8px 16px;
+  outline: none;
+  margin-left: 20px;
+}
+.label-text {
+  margin-bottom: 0px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000;
+  width: 70px;
+}
+.url-input {
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #d7dfe9;
+  background-color: #f2eeed;
+  color: #000;
+  border-radius: 3px;
+  margin-top: 5px;
+  padding: 8px 16px 8px 16px;
+  outline: none;
+  margin-left: 20px;
+}
+.text-area-input {
+  font-size: 14px;
+  border: 1px solid #d7dfe9;
+  background-color: #f2eeed;
+  color: #000;
+  border-radius: 3px;
+  margin-top: 5px;
+  padding: 8px 16px 8px 16px;
+  outline: none;
+  margin-left: 20px;
+}
+.save-data-button {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  height: 40px;
+  width: 200px;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  background-color: #737272;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.save-data-button-container {
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.success-text {
+  font-size: 14px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: green;
+}
+.add-another-button {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  height: 40px;
+  width: 200px;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  background-color: #5a6c8a;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.error-text {
+  font-size: 14px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: red;
 }

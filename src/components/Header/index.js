@@ -20,7 +20,7 @@ class Header extends Component {
 
   onClickLogout = () => {
     const {history} = this.props
-    Cookies.remove('user')
+    Cookies.remove('jwt_token')
     history.replace('/login')
   }
 
@@ -71,7 +71,7 @@ class Header extends Component {
         <nav className="nav-header">
           <Link to="/" className="link-item">
             <div className="header-logo-container">
-              <h1 className="header-heading">Peer</h1>
+              <h1 className="header-heading">Projects</h1>
             </div>
           </Link>
           <GiHamburgerMenu

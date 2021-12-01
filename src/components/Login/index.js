@@ -6,14 +6,14 @@ import './index.css'
 
 class LoginForm extends Component {
   state = {
-    userId: '',
+    username: '',
     password: '',
     showSubmitError: false,
     errorMsg: '',
   }
 
-  onChangeUserId = event => {
-    this.setState({userId: event.target.value})
+  onChangeUsername = event => {
+    this.setState({username: event.target.value})
   }
 
   onChangePassword = event => {
@@ -22,9 +22,7 @@ class LoginForm extends Component {
 
   onSubmitSuccess = jwtToken => {
     const {history} = this.props
-    const {userId} = this.state
-    const user = {userId, jwt_token: jwtToken}
-    Cookies.set('user', JSON.stringify(user), {
+    Cookies.set('jwt_token', jwtToken, {
       expires: 30,
       path: '/',
     })
@@ -37,9 +35,9 @@ class LoginForm extends Component {
 
   submitForm = async event => {
     event.preventDefault()
-    const {userId, password} = this.state
-    const userDetails = {userId, password}
-    const url = 'https://userdatanode.herokuapp.com/login'
+    const {username, password} = this.state
+    const userDetails = {username, password}
+    const url = 'https://chaiprojectsdatabase.herokuapp.com/login'
     const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),
@@ -75,20 +73,20 @@ class LoginForm extends Component {
     )
   }
 
-  renderUserIdField = () => {
-    const {userId} = this.state
+  renderUsernameField = () => {
+    const {username} = this.state
     return (
       <>
-        <label className="input-label" htmlFor="userId">
-          USERID
+        <label className="input-label" htmlFor="username">
+          USERNAME
         </label>
         <input
           type="text"
-          id="userId"
-          className="userId-input-field"
-          value={userId}
-          onChange={this.onChangeUserId}
-          placeholder="UserId"
+          id="username"
+          className="username-input-field"
+          value={username}
+          onChange={this.onChangeUsername}
+          placeholder="Username"
         />
       </>
     )
@@ -103,7 +101,7 @@ class LoginForm extends Component {
     return (
       <div className="login-form-container">
         <form className="form-container" onSubmit={this.submitForm}>
-          <div className="input-container">{this.renderUserIdField()}</div>
+          <div className="input-container">{this.renderUsernameField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
           <button type="submit" className="login-button">
             Login
